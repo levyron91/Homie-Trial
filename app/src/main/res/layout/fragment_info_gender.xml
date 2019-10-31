@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5">
+    <LinearLayout
+        android:id="@+id/header"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/back"/>
+    </LinearLayout>
+    <TextView
+        android:padding="30dp"
+        android:layout_below="@id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="I am a"
+        android:fontFamily="@font/promptlight"
+        android:textSize="30dp"/>
+    <LinearLayout
+
+        android:padding="30dp"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvWonman"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="WOMAN"
+                android:textSize="20dp"
+                android:textColor="#ccc"
+                android:background="@drawable/corner_button_unselect"
+                android:fontFamily="@font/promptbold" />
+            <TextView
+                android:id="@+id/tvMan"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="MAN"
+                android:textSize="20dp"
+                android:textColor="#ccc"
+                android:background="@drawable/corner_button_unselect"
+                android:fontFamily="@font/promptbold"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_margin="30dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tvContinue"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="CONTINUE"
+            android:textSize="20dp"
+            android:textColor="#fff"
+            android:background="@drawable/corner_button_select"
+            android:fontFamily="@font/promptbold"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

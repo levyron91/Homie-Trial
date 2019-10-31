@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    tools:context=".profile.UploadActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!-- Toolbar.3-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center|left"
+            android:background="#FFF">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/btnBack"
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/back"/>
+            <TextView
+                android:layout_marginLeft="30dp"
+                android:fontFamily="@font/promptlight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Source"
+                android:textColor="#000"
+                android:textSize="20dp"/>
+        </LinearLayout>
+        <!--Camera -->
+        <LinearLayout
+            android:id="@+id/camera"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFF"
+            android:orientation="horizontal">
+            <ImageView
+                android:padding="10dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@mipmap/camera_2"/>
+            <TextView
+                android:layout_marginLeft="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/promptbold"
+                android:textSize="20dp"
+                android:text="Camera"/>
+        </LinearLayout>
+
+        <!--Gallery-->
+        <LinearLayout
+            android:id="@+id/gallery"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FFF">
+            <ImageView
+                android:padding="10dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@mipmap/gallery"/>
+            <TextView
+                android:layout_marginLeft="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/promptbold"
+                android:textSize="20dp"
+                android:text="Gallery"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

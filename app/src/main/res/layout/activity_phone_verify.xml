@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    tools:context=".login.PhoneVerifyActivity">
+    <LinearLayout
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/back"/>
+    </LinearLayout>
+    <LinearLayout
+        android:padding="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My code is"
+            android:fontFamily="@font/promptbold"
+            android:textSize="30dp"/>
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+84 989875947"
+                android:fontFamily="@font/promptlight"
+                android:textSize="15dp" />
+            <TextView
+                android:id="@+id/tvResend"
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RESEND"
+                android:textColor="#000"/>
+        </LinearLayout>
+
+        <com.alimuzaffar.lib.pin.PinEntryEditText
+            android:id="@+id/edPinEntry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cursorVisible="false"
+            android:digits="1234567890"
+            android:inputType="number"
+            android:maxLines="1"
+            android:maxLength="6"
+            android:textIsSelectable="false"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:paddingHorizontal="30dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tvContinue"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="CONTINUE"
+            android:textSize="20dp"
+            android:textColor="#fff"
+            android:background="@drawable/corner_button_select"
+            android:fontFamily="@font/promptbold" />
+    </LinearLayout>
+
+</LinearLayout>

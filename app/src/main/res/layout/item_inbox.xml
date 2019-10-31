@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f5f5f5">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:weightSum="10">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageL"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/hot1"/>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7">
+            <TextView
+                android:id="@+id/tvMesL"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:fontFamily="@font/promptlight"
+                android:text="hellodasdadd"
+                android:textColor="#fff"
+                android:background="@drawable/background_message"
+                android:textSize="18dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="right"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:weightSum="10">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7">
+            <TextView
+                android:id="@+id/tvMesR"
+                android:layout_alignParentRight="true"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/promptlight"
+                android:text="Hết kì a có nhiều kèo nhậu lắm"
+                android:textColor="#fff"
+                android:background="@drawable/background_message"
+                android:textSize="18dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>
