@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.login.EmailLoginActivity"
+            android:name=".login.ui.login.EmailLoginActivity"
             android:label="@string/title_activity_email_login"></activity>
         <activity android:name=".profile.SettingActivity" />
         <activity android:name=".profile.UploadActivity" />

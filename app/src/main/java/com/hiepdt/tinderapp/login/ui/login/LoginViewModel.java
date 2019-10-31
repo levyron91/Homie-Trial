@@ -9,7 +9,7 @@ import android.util.Patterns;
 import com.hiepdt.tinderapp.login.data.LoginRepository;
 import com.hiepdt.tinderapp.login.data.Result;
 import com.hiepdt.tinderapp.login.data.model.LoggedInUser;
-import com.hiepdt.tinderapp.login.R;
+import com.hiepdt.tinderapp.R;
 
 public class LoginViewModel extends ViewModel {
 

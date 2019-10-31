@@ -1,9 +1,6 @@
 package com.hiepdt.tinderapp.profile;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -25,15 +22,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.hiepdt.tinderapp.R;
-import com.hiepdt.tinderapp.login.PhoneVerifyActivity;
 
-import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import cn.pedant.SweetAlert.SweetAlertDialog;
 import de.hdodenhof.circleimageview.CircleImageView;
 import me.relex.circleindicator.CircleIndicator;
 

@@ -1,131 +1,295 @@
 package com.hiepdt.tinderapp.login.ui.login;
+import android.content.Intent;
 
-import android.app.Activity;
-
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-
-import android.os.Bundle;
-
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.KeyEvent;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.hiepdt.tinderapp.login.R;
-import com.hiepdt.tinderapp.login.ui.login.LoginViewModel;
-import com.hiepdt.tinderapp.login.ui.login.LoginViewModelFactory;
+import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+import com.hiepdt.tinderapp.R;
 
-public class LoginActivity extends AppCompatActivity {
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.hiepdt.tinderapp.activities.MainActivity;
+import com.hiepdt.tinderapp.login.info.InfoActivity;
 
-    private LoginViewModel loginViewModel;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
+public class EmailLoginActivity extends AppCompatActivity {
+    public String username = "admin";
+    public String password = "admin";
+    private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
+    public static float sumTotal;
+    private static String uID;
+    private static final String IMAGE_MALE_LINK = "https://firebasestorage.googleapis.com/v0/b/tinderapp-77c7f.appspot.com/o/male_image.png?alt=media&token=38d81ba7-91ed-484f-a3a6-a34ee9f73f8e";
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        //test
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        Note newnote = new Note(1,"Buy cheese","We need cheese",(new Date()).getTime());
+//        DatabaseReference myRef = database.getReference("Notes/"+mAuth.getUid());
+//        DatabaseReference newChildRef = myRef.push();
+//        String key = newChildRef.getKey();
+//        myRef.child(key).setValue(newnote);
+
+
+        //
+        Log.d("oncreate:",mAuth.toString());
         setContentView(R.layout.activity_email_login);
-        loginViewModel = ViewModelProviders.of(this, new LoginViewModelFactory())
-                .get(LoginViewModel.class);
-
-        final EditText usernameEditText = findViewById(R.id.username);
-        final EditText passwordEditText = findViewById(R.id.password);
-        final Button loginButton = findViewById(R.id.login);
-        final ProgressBar loadingProgressBar = findViewById(R.id.loading);
-
-        loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
-            @Override
-            public void onChanged(@Nullable LoginFormState loginFormState) {
-                if (loginFormState == null) {
-                    return;
-                }
-                loginButton.setEnabled(loginFormState.isDataValid());
-                if (loginFormState.getUsernameError() != null) {
-                    usernameEditText.setError(getString(loginFormState.getUsernameError()));
-                }
-                if (loginFormState.getPasswordError() != null) {
-                    passwordEditText.setError(getString(loginFormState.getPasswordError()));
-                }
-            }
-        });
-
-        loginViewModel.getLoginResult().observe(this, new Observer<LoginResult>() {
-            @Override
-            public void onChanged(@Nullable LoginResult loginResult) {
-                if (loginResult == null) {
-                    return;
-                }
-                loadingProgressBar.setVisibility(View.GONE);
-                if (loginResult.getError() != null) {
-                    showLoginFailed(loginResult.getError());
-                }
-                if (loginResult.getSuccess() != null) {
-                    updateUiWithUser(loginResult.getSuccess());
-                }
-                setResult(Activity.RESULT_OK);
-
-                //Complete and destroy login activity once successful
-                finish();
-            }
-        });
-
-        TextWatcher afterTextChangedListener = new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // ignore
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // ignore
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                loginViewModel.loginDataChanged(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
-            }
-        };
-        usernameEditText.addTextChangedListener(afterTextChangedListener);
-        passwordEditText.addTextChangedListener(afterTextChangedListener);
-        passwordEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    loginViewModel.login(usernameEditText.getText().toString(),
-                            passwordEditText.getText().toString());
-                }
-                return false;
-            }
-        });
-
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        Button SubmitButton = findViewById(R.id.SubmitButton);
+        Log.d("SUBMIT BUTTON", (SubmitButton==null)?"NOT NULL":"null");
+        SubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadingProgressBar.setVisibility(View.VISIBLE);
-                loginViewModel.login(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
+                EditText usernameView= findViewById(R.id.username_edittext);
+                EditText passView= findViewById(R.id.password_edittext);
+                String userpass = passView.getText().toString();
+                String userid = usernameView.getText().toString();
+                signInWithEmail(userid,userpass);
+//                mAuth.signInWithEmailAndPassword(userid, userpass)
+//                        .addOnCompleteListener(EmailLoginActivity.this, new OnCompleteListener<AuthResult>() {
+//                            @Override
+//                            public void onComplete(@Nullable Task<AuthResult> task) {
+//                                if (task.isSuccessful()) {
+//                                    // Sign in success, update UI with the signed-in user's information
+//                                    Log.d("Login:", "signInWithEmail:success");
+//                                    FirebaseUser user = mAuth.getCurrentUser();
+//                                    if(user!=null){
+//                                        openNoteActivity();
+//                                    }
+//                                    //updateUI(user);
+//                                } else {
+//                                    // If sign in fails, display a message to the user.
+//                                    Log.w("Login", "signInWithEmail:failure", task.getException());
+//                                    Toast.makeText(EmailLoginActivity.this, "Authentication failed.",
+//                                            Toast.LENGTH_SHORT).show();
+//                                    //updateUI(null);
+//                                }
+//
+//                                // ...
+//                            }
+//                        });
             }
         });
-    }
+        Button RegisterButton = findViewById(R.id.RegisterButton);
+        RegisterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText usernameView= findViewById(R.id.username_edittext);
+                EditText passView= findViewById(R.id.password_edittext);
+                String userpass = passView.getText().toString();
+                String userid = usernameView.getText().toString();
+                if(userpass.equals("")||userid.equals("")){
+                    Toast.makeText(EmailLoginActivity.this, "Email or password missing.",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-    private void updateUiWithUser(LoggedInUserView model) {
-        String welcome = getString(R.string.welcome) + model.getDisplayName();
-        // TODO : initiate successful logged in experience
-        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
-    }
+                mAuth.createUserWithEmailAndPassword(userid, userpass)
+                        .addOnCompleteListener(EmailLoginActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@Nullable Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    // Sign in success, update UI with the signed-in user's information
+                                    Log.d("NEW LOGIN", "signInWithCredential:success");
+//                            Toast.makeText(getApplication(), "Signin Success!!", Toast.LENGTH_SHORT).show();
+                                    SweetAlertDialog dialog = new SweetAlertDialog(EmailLoginActivity.this, SweetAlertDialog.SUCCESS_TYPE);
+                                    dialog.setTitleText("Login success")
+                                            .hideConfirmButton()
+                                            .show();
 
-    private void showLoginFailed(@StringRes Integer errorString) {
-        Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
+                                    final FirebaseUser user = task.getResult().getUser();
+
+                                    ValueEventListener eventListener = new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                                            uID = user.getUid();
+                                            boolean contain = false;
+                                            for(DataSnapshot snapshot : dataSnapshot.child("users").getChildren()){
+//
+                                                if(uID.equals(snapshot.getKey())){
+                                                    contain = true;
+                                                    break;
+                                                }
+
+                                            }
+                                            if(contain == true){
+                                                Intent intent = new Intent(getApplication(), MainActivity.class);
+                                                startActivity(intent);
+                                            }
+                                            else{
+
+                                                //---------------------Init Database Users-------------//
+
+                                                mDatabase.child("users").child(uID).child("images").child("1").setValue(IMAGE_MALE_LINK);
+
+
+                                                //---------------------Init Database Settings-------------//
+                                                mDatabase.child("settings").child(uID).child("location").setValue("Hanoi");
+                                                mDatabase.child("settings").child(uID).child("show_me").setValue("Man");
+                                                mDatabase.child("settings").child(uID).child("distance").setValue("4");
+                                                mDatabase.child("settings").child(uID).child("age_start").setValue("18");
+                                                mDatabase.child("settings").child(uID).child("age_end").setValue("24");
+                                                mDatabase.child("settings").child(uID).child("top_pick").setValue(true);
+                                                mDatabase.child("settings").child(uID).child("on_tinder").setValue(true);
+
+                                                //---------------------Init Database Infos-------------//
+
+                                                Intent intent = new Intent(getApplication(), InfoActivity.class);
+                                                startActivity(intent);
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            SweetAlertDialog dialog = new SweetAlertDialog(EmailLoginActivity.this, SweetAlertDialog.ERROR_TYPE);
+                                            dialog.setTitleText("Login failed!!")
+                                                    .hideConfirmButton()
+                                                    .show();                                }
+                                    };
+                                    mDatabase.addListenerForSingleValueEvent(eventListener);
+
+                                } else {
+                                    // Sign in failed, display a message and update the UI
+                                    Log.w("LOGIN FAIL", "signInWithCredential:failure", task.getException());
+//                            Toast.makeText(getApplication(), "Signin Failed!!", Toast.LENGTH_SHORT).show();
+
+                                    if (task.getException() instanceof FirebaseAuthException) {
+                                        // The verification code entered was invalid
+                                        // [START_EXCLUDE silent]
+                                        SweetAlertDialog dialog = new SweetAlertDialog(EmailLoginActivity.this, SweetAlertDialog.ERROR_TYPE);
+                                        dialog.setTitleText("Verify is wrong!!")
+                                                .hideConfirmButton()
+                                                .show();
+                                        // [END_EXCLUDE]
+                                    }
+                                }
+
+                                // ...
+                            }
+                        });
+            }
+        });
+
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseAuth.getInstance().signOut();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        //updateUI(currentUser);
+        if(currentUser!=null) {
+            Log.d("onStart:", currentUser.toString());
+            openNoteActivity();
+        }
+    }
+    public void openNoteActivity(){
+        Intent intent = new Intent(this, MainActivity.class);
+        //Intent intent = new Intent(v.getContext(), EditNoteActivity.class);
+        startActivity(intent);
+    }
+    private void signInWithEmail(String userid, String userpass) {
+        mAuth.signInWithEmailAndPassword(userid,userpass)
+                .addOnCompleteListener(EmailLoginActivity.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d("NEW LOGIN", "signInWithCredential:success");
+//                            Toast.makeText(getApplication(), "Signin Success!!", Toast.LENGTH_SHORT).show();
+                            SweetAlertDialog dialog = new SweetAlertDialog(EmailLoginActivity.this, SweetAlertDialog.SUCCESS_TYPE);
+                            dialog.setTitleText("Login success")
+                                    .hideConfirmButton()
+                                    .show();
+
+                            final FirebaseUser user = task.getResult().getUser();
+
+                            ValueEventListener eventListener = new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                                    uID = user.getUid();
+                                    boolean contain = false;
+                                    for(DataSnapshot snapshot : dataSnapshot.child("users").getChildren()){
+//
+                                        if(uID.equals(snapshot.getKey())){
+                                            contain = true;
+                                            break;
+                                        }
+
+                                    }
+                                    if(contain == true){
+                                        Intent intent = new Intent(getApplication(), MainActivity.class);
+                                        startActivity(intent);
+                                    }
+                                    else{
+
+                                        //---------------------Init Database Users-------------//
+
+                                        mDatabase.child("users").child(uID).child("images").child("1").setValue(IMAGE_MALE_LINK);
+
+
+                                        //---------------------Init Database Settings-------------//
+                                        mDatabase.child("settings").child(uID).child("location").setValue("Hanoi");
+                                        mDatabase.child("settings").child(uID).child("show_me").setValue("Man");
+                                        mDatabase.child("settings").child(uID).child("distance").setValue("4");
+                                        mDatabase.child("settings").child(uID).child("age_start").setValue("18");
+                                        mDatabase.child("settings").child(uID).child("age_end").setValue("24");
+                                        mDatabase.child("settings").child(uID).child("top_pick").setValue(true);
+                                        mDatabase.child("settings").child(uID).child("on_tinder").setValue(true);
+
+                                        //---------------------Init Database Infos-------------//
+
+                                        Intent intent = new Intent(getApplication(), InfoActivity.class);
+                                        startActivity(intent);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                    SweetAlertDialog dialog = new SweetAlertDialog(EmailLoginActivity.this, SweetAlertDialog.ERROR_TYPE);
+                                    dialog.setTitleText("Login failed!!")
+                                            .hideConfirmButton()
+                                            .show();                                }
+                            };
+                            mDatabase.addListenerForSingleValueEvent(eventListener);
+
+                        } else {
+                            // Sign in failed, display a message and update the UI
+                            Log.w("LOGIN FAIL", "signInWithCredential:failure", task.getException());
+//                            Toast.makeText(getApplication(), "Signin Failed!!", Toast.LENGTH_SHORT).show();
+
+                            if (task.getException() instanceof FirebaseAuthException) {
+                                // The verification code entered was invalid
+                                // [START_EXCLUDE silent]
+                                SweetAlertDialog dialog = new SweetAlertDialog(EmailLoginActivity.this, SweetAlertDialog.ERROR_TYPE);
+                                dialog.setTitleText("Verify is wrong!!")
+                                        .hideConfirmButton()
+                                        .show();
+                                // [END_EXCLUDE]
+                            }
+                        }
+                    }
+                });
     }
 }

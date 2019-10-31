@@ -32,7 +32,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.hiepdt.tinderapp.R;
 import com.hiepdt.tinderapp.activities.MainActivity;
-
+import com.hiepdt.tinderapp.login.ui.login.EmailLoginActivity;
 import java.util.Arrays;
 
 public class LoginActivity extends AppCompatActivity {
@@ -90,7 +90,8 @@ public class LoginActivity extends AppCompatActivity {
         btnPhone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, PhoneLoginActivity.class);
+                Intent intent = new Intent(LoginActivity.this, EmailLoginActivity.class);
+                Log.e("oncliCKS'1'1'23", "onClick: " );
                 startActivity(intent);
             }
         });

@@ -18,7 +18,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.hiepdt.tinderapp.R;
 
-public class BirthdayFragment extends Fragment {
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+public class
+BirthdayFragment extends Fragment {
     private ImageView btnBack;
     private TextView tvContinue;
     private EditText edBirthday;
@@ -51,6 +56,14 @@ public class BirthdayFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 final String birthday = edBirthday.getText().toString().trim();
+                DateFormat sdf = new SimpleDateFormat("dd/MM/YY");
+                sdf.setLenient(false);
+                try {
+                    sdf.parse(birthday);
+                } catch ( ParseException e) {
+                    edBirthday.setError("bad date");
+                    return;
+                }
                 if(birthday.isEmpty()){
                     edBirthday.setError("Please enter your birthday");
                     return;
