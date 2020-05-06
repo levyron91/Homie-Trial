@@ -112,11 +112,11 @@ public class EmailLoginActivity extends AppCompatActivity {
                                     Log.d("NEW LOGIN", "signInWithCredential:success");
 //                            Toast.makeText(getApplication(), "Signin Success!!", Toast.LENGTH_SHORT).show();
                                     SweetAlertDialog dialog = new SweetAlertDialog(EmailLoginActivity.this, SweetAlertDialog.SUCCESS_TYPE);
-                                    dialog.setTitleText("Login success")
-                                            .hideConfirmButton()
-                                            .show();
 
                                     final FirebaseUser user = task.getResult().getUser();
+                                    dialog.setTitleText("Login success")
+                                            .hideConfirmButton();
+//                                            .show();
 
                                     ValueEventListener eventListener = new ValueEventListener() {
                                         @Override

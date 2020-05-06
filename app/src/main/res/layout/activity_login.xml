@@ -52,7 +52,7 @@
             android:layout_marginHorizontal="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LOG IN WITH PHONE NUMBER"
+            android:text="SIGN-IN  |  SIGN-UP"
             android:fontFamily="@font/promptbold"
             android:textColor="#fff"
             android:background="@drawable/corner_button_phone"

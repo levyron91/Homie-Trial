@@ -163,7 +163,7 @@ public class MatchFragment extends Fragment implements CardStackListener {
 
                         //todo: Nếu đối tượng bật on_tinder
                         if(on_tinder){
-                            String gender = snapshot2.child("gender").getValue().toString();
+                            String gender = "test";
                             //todo:Nếu đối tượng có giới tính giống như người dùng cần
                             if(show_me.equals(gender)){
                                 long age = ageFormat((String) snapshot2.child("birthday").getValue());

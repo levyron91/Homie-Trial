@@ -72,7 +72,7 @@
                         android:layout_marginRight="35dp"
                         android:layout_alignParentRight="true"
                         android:fontFamily="@font/promptlight"
-                        android:text="0945455387"
+                        android:text="0123456789"
                         android:ellipsize="end"
                         android:maxLines="1"
                         android:layout_width="wrap_content"
@@ -117,7 +117,7 @@
                         android:layout_marginRight="35dp"
                         android:layout_alignParentRight="true"
                         android:fontFamily="@font/promptlight"
-                        android:text="dinhhiepxtb@gmail.com"
+                        android:text="TelHaiSchool@gmail.com"
                         android:ellipsize="end"
                         android:maxLines="1"
                         android:layout_width="150dp"
@@ -242,7 +242,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/promptlight"
-                    android:text="THÍNH uses these preferences to suggest matches."
+                    android:text="HOMIE uses these preferences to suggest matches."
                     android:textSize="13dp"/>
             </LinearLayout>
 
@@ -278,7 +278,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/promptbold"
                             android:textSize="16dp"
-                            android:text="50mi."/>
+                            android:text="50k."/>
 
                     </RelativeLayout>
                     <com.hiepdt.tinderapp.profile.seekbar.SingleSeekBar
@@ -297,7 +297,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/promptlight"
-                    android:text="THÍNH uses these preferences to suggest matches."
+                    android:text="HOMIE uses these preferences to suggest matches."
                     android:textSize="13dp"/>
             </LinearLayout>
 
@@ -355,7 +355,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/promptlight"
-                    android:text="THÍNH uses these preferences to suggest matches."
+                    android:text="HOMIE uses these preferences to suggest matches."
                     android:textSize="13dp"/>
             </LinearLayout>
 
@@ -397,7 +397,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/promptlight"
-                    android:text="Change your swipe location to see Tinder members in other cities"
+                    android:text="Change your swipe location to see Facebook members in other cities"
                     android:textSize="13dp" />
             </LinearLayout>
 
@@ -420,7 +420,7 @@
                         android:fontFamily="@font/promptlight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Show me on Tinder"
+                        android:text="Show me on Facebook"
                         android:textColor="#000"/>
 
                     <Switch
@@ -439,7 +439,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/promptlight"
-                    android:text="Change your swipe location to see Tinder members in other cities"
+                    android:text="Change your swipe location to see Facebook members in other cities"
                     android:textSize="13dp" />
             </LinearLayout>
 
@@ -483,7 +483,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/promptlight"
-                    android:text="Change your swipe location to see Tinder members in other cities"
+                    android:text="Change your swipe location to see Facebook members in other cities"
                     android:textSize="13dp"/>
                 <LinearLayout
                     android:orientation="vertical"
@@ -604,7 +604,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/promptlight"
-                    android:text="Version 10.2.3 (05102019)"/>
+                    android:text="Version 10.0.1"/>
 
             </LinearLayout>
 
