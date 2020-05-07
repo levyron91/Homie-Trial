@@ -71,7 +71,7 @@ public class SettingActivity extends AppCompatActivity {
         singleSeek.setOnSeekbarChangeListener(new OnSeekbarChangeListener() {
             @Override
             public void valueChanged(Number value) {
-                tvKm.setText(value.toString()+"Mi.");
+                tvKm.setText(value.toString()+"Km.");
             }
         });
 
@@ -88,7 +88,7 @@ public class SettingActivity extends AppCompatActivity {
         uID = mAuth.getCurrentUser().getUid();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        //-------------Đọc dữ liệu từ settings --------------//
+        //------------- Read data from settings --------------//
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -105,7 +105,7 @@ public class SettingActivity extends AppCompatActivity {
                 tvEmail.setText(email);
                 tvLocation.setText(location);
                 tvShowMe.setText(show_me);
-                tvKm.setText(distance+" Mi.");
+                tvKm.setText(distance+"Km.");
                 singleSeek.setMinStartValue(Float.parseFloat(distance));
 //                        singleSeek.apply();
 
@@ -123,14 +123,14 @@ public class SettingActivity extends AppCompatActivity {
 
             }
         });
-        //-------------Ghi dữ liệu vào setttings-------------//
+        //------------- Write data to setttings-------------//
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final String email = tvEmail.getText().toString().trim();
                 final String location = tvLocation.getText().toString().trim();
                 final String show_me = tvShowMe.getText().toString().trim();
-                final String distance = tvKm.getText().toString().trim().replace("Mi.", "");
+                final String distance = tvKm.getText().toString().trim().replace("Km.", "");
                 String age [] = tvAge.getText().toString().trim().split(" - ");
                 final String age_start = age[0];
                 final String age_end = age[1];
@@ -156,7 +156,7 @@ public class SettingActivity extends AppCompatActivity {
                 if(mAuth.getCurrentUser()!=null) {
                     final SweetAlertDialog dialog = new SweetAlertDialog(SettingActivity.this, SweetAlertDialog.WARNING_TYPE);
                     dialog.setTitleText("Logout!")
-                            .setContentText("Are you sure to logout Neyer?")
+                            .setContentText("Are you sure to logout HOMIE?")
                             .setConfirmText("Yes")
                             .setCancelText("No")
                             .showCancelButton(true)

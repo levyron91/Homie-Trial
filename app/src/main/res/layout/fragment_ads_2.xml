@@ -33,7 +33,7 @@
             android:textColor="#000"
             android:textSize="15dp"
             android:fontFamily="@font/promptlight"
-            android:text="Get Ignor who you don't like!"/>
+            android:text="Ignor who you don't like!"/>
 
     </LinearLayout>
 </RelativeLayout>

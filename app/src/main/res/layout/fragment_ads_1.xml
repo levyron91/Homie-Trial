@@ -33,7 +33,7 @@
             android:textColor="#000"
             android:textSize="15dp"
             android:fontFamily="@font/promptlight"
-            android:text="Get Rewind with Tinder Plus!"/>
+            android:text="Visit your old Homies!"/>
 
     </LinearLayout>
 </RelativeLayout>

@@ -190,7 +190,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/promptlight"
-                    android:text="Change your swipe location to see Tinder members in other cities"
+                    android:text="Change your swipe location to see HOMIE members in other cities"
                     android:textSize="13dp"/>
             </LinearLayout>
 
@@ -397,7 +397,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/promptlight"
-                    android:text="Change your swipe location to see Facebook members in other cities"
+                    android:text="Change your swipe location to see HOMIE members in other cities"
                     android:textSize="13dp" />
             </LinearLayout>
 
@@ -476,14 +476,13 @@
                         android:layout_height="25dp"
                         android:src="@mipmap/bug"/>
                 </LinearLayout>
-
-                <TextView
+               <TextView
                     android:layout_margin="10dp"
                     android:paddingHorizontal="25dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/promptlight"
-                    android:text="Change your swipe location to see Facebook members in other cities"
+                    android:text="Tell us what's wrong!!"
                     android:textSize="13dp"/>
                 <LinearLayout
                     android:orientation="vertical"

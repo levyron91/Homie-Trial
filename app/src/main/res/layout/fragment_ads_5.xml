@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:textColor="#000"
             android:textSize="15dp"
-            android:text="Boost your profile once month!"/>
+            android:text="Boost your profile once a month!"/>
 
     </LinearLayout>
 </RelativeLayout>

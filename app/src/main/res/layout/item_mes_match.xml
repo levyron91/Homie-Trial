@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/promptbold"
-                android:text="Team Tinder"
+                android:text="Team HOMIE"
                 android:textSize="18dp" />
 
             <TextView
@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/promptlight"
-                android:text="We see you ... Your Tinder..." />
+                android:text="We see you ... Your HOMIE..." />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

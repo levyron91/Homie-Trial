@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/promptlight"
-                android:text="This is how it will appear in Neyer"/>
+                android:text="This is how it will appear in HOMIE"/>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout

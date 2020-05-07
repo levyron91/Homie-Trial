@@ -49,12 +49,12 @@ public class InboxAdapter extends RecyclerView.Adapter<InboxAdapter.ViewHolder> 
         String url = messenger.getUrl();
         String content = messenger.getContent();
         if(!createBy.equals(uID)){
-            //--------Ẩn------------//
+            //--------Hide------------//
             holder.tvMesR.setVisibility(View.INVISIBLE);
 
             holder.tvMesL.setVisibility(View.VISIBLE);
             holder.imageL.setVisibility(View.VISIBLE);
-            //--------Hiện-----------//
+            //--------Time-----------//
 
             Glide.with(holder.imageL).load(url).into(holder.imageL);
             holder.tvMesL.setText(content);

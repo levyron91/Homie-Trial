@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.ViewHolder> {
 
     private Context mContext;
-    ArrayList<Info> mListInfo;
+    private ArrayList<Info>  mListInfo;
 
 
 

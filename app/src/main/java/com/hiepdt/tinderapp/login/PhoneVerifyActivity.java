@@ -75,7 +75,7 @@ public class PhoneVerifyActivity extends AppCompatActivity {
 
         sp = getSharedPreferences("phone", MODE_PRIVATE);
         PHONE_NUMBER = sp.getString("phone-number","");
-//        System.out.println("số điện thoại: " + PHONE_NUMBER);
+//        System.out.println("Phone Number: " + PHONE_NUMBER);
 
         tvPhoneNumber = findViewById(R.id.tvPhoneNumber);
         btnBack = findViewById(R.id.btnBack);
@@ -266,7 +266,7 @@ public class PhoneVerifyActivity extends AppCompatActivity {
 
 
                                         //---------------------Init Database Settings-------------//
-                                        mDatabase.child("settings").child(uID).child("location").setValue("Hanoi");
+                                        mDatabase.child("settings").child(uID).child("location").setValue("Israel");
                                         mDatabase.child("settings").child(uID).child("show_me").setValue("Man");
                                         mDatabase.child("settings").child(uID).child("distance").setValue("4");
                                         mDatabase.child("settings").child(uID).child("age_start").setValue("18");

@@ -144,7 +144,7 @@ public class EmailLoginActivity extends AppCompatActivity {
 
 
                                                 //---------------------Init Database Settings-------------//
-                                                mDatabase.child("settings").child(uID).child("location").setValue("Hanoi");
+                                                mDatabase.child("settings").child(uID).child("location").setValue("Israel");
                                                 mDatabase.child("settings").child(uID).child("show_me").setValue("Man");
                                                 mDatabase.child("settings").child(uID).child("distance").setValue("4");
                                                 mDatabase.child("settings").child(uID).child("age_start").setValue("18");
@@ -250,7 +250,7 @@ public class EmailLoginActivity extends AppCompatActivity {
 
 
                                         //---------------------Init Database Settings-------------//
-                                        mDatabase.child("settings").child(uID).child("location").setValue("Hanoi");
+                                        mDatabase.child("settings").child(uID).child("location").setValue("Israel");
                                         mDatabase.child("settings").child(uID).child("show_me").setValue("Man");
                                         mDatabase.child("settings").child(uID).child("distance").setValue("4");
                                         mDatabase.child("settings").child(uID).child("age_start").setValue("18");

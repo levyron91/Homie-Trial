@@ -27,7 +27,7 @@
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hiệp, 19"
+            android:text="Adi, 19"
             android:fontFamily="@font/promptbold"
             android:textSize="25dp"/>
         <TextView
@@ -35,53 +35,58 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/promptlight"
-            android:text="Vietnam National University - Hanoi"/>
+            android:text="Tel Hai College"/>
+
         <RelativeLayout
-            android:orientation="horizontal"
-            android:layout_marginTop="40dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="166dp"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="40dp">
+
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/btnSetting"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    app:rippleColor="#ccc"
-                    android:src="@mipmap/setting"/>
+                    android:src="@mipmap/setting"
+                    app:rippleColor="#ccc" />
+
                 <TextView
-                    android:layout_marginTop="5dp"
-                    android:layout_below="@id/btnSetting"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/btnSetting"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="@font/promptlight"
-                    android:text="SETTINGS"/>
+                    android:text="SETTINGS" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:layout_centerInParent="true">
+                android:layout_centerInParent="true"
+                android:layout_marginTop="60dp">
+
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/btnUpload"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    app:rippleColor="#ccc"
-                    android:src="@mipmap/camera"/>
+                    android:src="@mipmap/camera"
+                    app:rippleColor="#ccc" />
+
                 <TextView
-                    android:layout_marginTop="5dp"
-                    android:layout_below="@id/btnUpload"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/btnUpload"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="@font/promptlight"
-                    android:text="ADD MEDIA"/>
+                    android:text="ADD MEDIA" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -89,20 +94,22 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="40dp">
+
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/btnEdit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    app:rippleColor="#ccc"
-                    android:src="@mipmap/edit"/>
+                    android:src="@mipmap/edit"
+                    app:rippleColor="#ccc" />
+
                 <TextView
-                    android:layout_marginTop="5dp"
-                    android:layout_below="@id/btnEdit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/btnEdit"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="@font/promptlight"
-                    android:text="EDIT INFO"/>
+                    android:text="EDIT INFO" />
             </RelativeLayout>
 
 

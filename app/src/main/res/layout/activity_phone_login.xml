@@ -55,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/promptlight"
-            android:text="When you tap Continue, Neyer will send a text with verification code. Message and data rates may apply. The verified phone number can be used to login."/>
+            android:text="When you tap Continue, HOMIE will send a text with verification code. Message and data rates may apply. The verified phone number can be used to login."/>
     </LinearLayout>
     <LinearLayout
         android:paddingHorizontal="30dp"
