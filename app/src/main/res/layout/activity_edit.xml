@@ -392,7 +392,7 @@
                     android:fontFamily="@font/promptbold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Job Title"/>
+                    android:text="Amenities in Home"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -405,7 +405,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:maxLines="1"
-                        android:hint="Add Job Title"
+                        android:hint="Add Amenities"
                         android:background="#FFF" />
                 </LinearLayout>
             </LinearLayout>
@@ -421,7 +421,7 @@
                     android:fontFamily="@font/promptbold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Company"/>
+                    android:text="Places Around Me"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -434,7 +434,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:maxLines="1"
-                        android:hint="Add Company"
+                        android:hint="Add Places"
                         android:background="#FFF" />
                 </LinearLayout>
             </LinearLayout>
@@ -450,7 +450,7 @@
                     android:fontFamily="@font/promptbold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="School"/>
+                    android:text="Living in"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -463,7 +463,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:maxLines="1"
-                        android:hint="Add School"
+                        android:hint="Add City"
                         android:background="#FFF" />
                 </LinearLayout>
             </LinearLayout>
@@ -479,7 +479,7 @@
                     android:fontFamily="@font/promptbold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Living In"/>
+                    android:text="Country"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -492,7 +492,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:maxLines="1"
-                        android:hint="Add City"
+                        android:hint="Add Country"
                         android:background="#FFF" />
                 </LinearLayout>
             </LinearLayout>

@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "126285321967",
-    "firebase_url": "https://tinder-trial.firebaseio.com",
-    "project_id": "tinder-trial",
-    "storage_bucket": "tinder-trial.appspot.com"
+    "project_number": "398730941473",
+    "firebase_url": "https://homie-trial.firebaseio.com",
+    "project_id": "homie-trial",
+    "storage_bucket": "homie-trial.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:126285321967:android:a6e83297c24570f8aaad1a",
+        "mobilesdk_app_id": "1:398730941473:android:67b53661c2dfe2fb36bf60",
         "android_client_info": {
-          "package_name": "com.hiepdt.tinderapp"
+          "package_name": "com.swapping.homie"
         }
       },
       "oauth_client": [
         {
-          "client_id": "126285321967-d1bftu0jmg3dodesht237ndpg2d43f5m.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.hiepdt.tinderapp",
-            "certificate_hash": "3b108c54dcd359c09cac474c7bc8ca2b19fed85c"
-          }
-        },
-        {
-          "client_id": "126285321967-d0rhahlvnrerona66ko79jo7tba5dvjo.apps.googleusercontent.com",
+          "client_id": "398730941473-64a39f56fogk0f7fdt563tuapgo2lnda.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCWxwB2_01jnz36sJdJrCK9N1IFpPq5pRY"
+          "current_key": "AIzaSyCRilPgbA7FOTV3ereK8rdg3w28X9W79rk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "126285321967-d0rhahlvnrerona66ko79jo7tba5dvjo.apps.googleusercontent.com",
+              "client_id": "398730941473-64a39f56fogk0f7fdt563tuapgo2lnda.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

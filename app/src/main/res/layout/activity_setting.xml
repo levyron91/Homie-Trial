@@ -281,7 +281,7 @@
                             android:text="50k."/>
 
                     </RelativeLayout>
-                    <com.hiepdt.tinderapp.profile.seekbar.SingleSeekBar
+                    <com.swapping.homie.profile.seekbar.SingleSeekBar
                         android:id="@+id/singleSeek"
                         android:layout_marginTop="20dp"
                         android:layout_marginHorizontal="25dp"
@@ -337,7 +337,7 @@
 
                     </RelativeLayout>
 
-                    <com.hiepdt.tinderapp.profile.seekbar.RangeSeekBar
+                    <com.swapping.homie.profile.seekbar.RangeSeekBar
                         android:id="@+id/rangeSeek"
                         android:layout_marginTop="20dp"
                         android:layout_marginHorizontal="25dp"
@@ -481,8 +481,9 @@
                     android:paddingHorizontal="25dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                   android:layout_gravity="center"
                     android:fontFamily="@font/promptlight"
-                    android:text="Tell us what's wrong!!"
+                    android:text="we've got your back;)"
                     android:textSize="13dp"/>
                 <LinearLayout
                     android:orientation="vertical"

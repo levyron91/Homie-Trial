@@ -21,7 +21,7 @@
         android:layout_below="@id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="My school is"
+        android:text="My home is located in"
         android:fontFamily="@font/promptbold"
         android:textSize="30dp"/>
     <LinearLayout
@@ -40,7 +40,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Your school"
+                android:hint="Your city"
                 android:textSize="15dp"
                 android:inputType="text"
                 android:fontFamily="@font/promptlight"/>

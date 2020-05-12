@@ -33,7 +33,7 @@
             android:textColor="#000"
             android:textSize="15dp"
             android:fontFamily="@font/promptlight"
-            android:text="Visit your old Homies!"/>
+            android:text="Undo your Recent Like!"/>
 
     </LinearLayout>
 </RelativeLayout>

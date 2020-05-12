@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.hiepdt.tinderapp">
+    package="com.swapping.homie">
 
     <application
         android:allowBackup="true"
@@ -11,17 +11,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".login.ui.login.EmailLoginActivity"
+            android:name="com.swapping.homie.login.ui.login.EmailLoginActivity"
             android:label="@string/title_activity_email_login"></activity>
-        <activity android:name=".profile.SettingActivity" />
-        <activity android:name=".profile.UploadActivity" />
-        <activity android:name=".profile.EditActivity" />
-        <activity android:name=".activities.MainActivity" />
-        <activity android:name=".login.PhoneLoginActivity" />
-        <activity android:name=".login.PhoneVerifyActivity" />
-        <activity android:name=".login.info.InfoActivity" />
-        <activity android:name=".messenger.InboxActivity" />
-        <activity android:name=".login.LoginActivity">
+        <activity android:name="com.swapping.homie.profile.SettingActivity" />
+        <activity android:name="com.swapping.homie.profile.UploadActivity" />
+        <activity android:name="com.swapping.homie.profile.EditActivity" />
+        <activity android:name="com.swapping.homie.activities.MainActivity" />
+        <activity android:name="com.swapping.homie.login.PhoneLoginActivity" />
+        <activity android:name="com.swapping.homie.login.PhoneVerifyActivity" />
+        <activity android:name="com.swapping.homie.login.info.InfoActivity" />
+        <activity android:name="com.swapping.homie.messenger.InboxActivity" />
+        <activity android:name="com.swapping.homie.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.CAMERA" />
+
 
     <uses-permission android:name="android.permission.INTERNET" />
 
