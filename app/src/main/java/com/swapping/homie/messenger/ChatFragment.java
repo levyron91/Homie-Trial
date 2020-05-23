@@ -117,16 +117,17 @@ public class ChatFragment extends Fragment {
 
     public ArrayList<MesMatch> createMesMatch() {
         ArrayList<MesMatch> list = new ArrayList<>();
-        list.add(new MesMatch("https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80", "Jen", "Hello!!"));
-        list.add(new MesMatch("https://images.unsplash.com/photo-1545912453-db258ca9b7b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80", "Noga", "Have you been to Italy??"));
-        list.add(new MesMatch("https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80", "Emma", "How far is the city center??"));
-        list.add(new MesMatch("https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80", "Max", "Is there a beach near you?"));
-        list.add(new MesMatch("https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80", "Jeff", "What's he best place to eat?"));
-        list.add(new MesMatch("https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80", "Nirit", "What's the address?"));
-        list.add(new MesMatch("https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80", "Dana", "I like your house!"));
-        list.add(new MesMatch("https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80", "Ross", "Im fine!!"));
-        list.add(new MesMatch("https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80", "Joey", "How you doing?"));
+        list.add(new MesMatch("https://i.imgur.com/zu4k1u8.jpg", "Jen", "Hello!!"));
+        list.add(new MesMatch("https://i.imgur.com/KzmYhdu.jpg", "Noga", "Have you been to Italy??"));
+        list.add(new MesMatch("https://i.imgur.com/TQRjzs7.jpg", "Emma", "How far is the city center??"));
+        list.add(new MesMatch("https://i.imgur.com/KdxbVI0.jpg", "Max", "Is there a beach near you?"));
+        list.add(new MesMatch("https://i.imgur.com/8ZnbEt6.png", "Jeff", "What's he best place to eat?"));
+        list.add(new MesMatch("https://i.imgur.com/CgZaKnH.jpg", "Nirit", "What's the address?"));
+        list.add(new MesMatch("https://i.imgur.com/CgZaKnH.jpg", "Dana", "I like your house!"));
+        list.add(new MesMatch("https://i.imgur.com/CgZaKnH.jpg", "Ross", "Im fine!!"));
+        list.add(new MesMatch("https://i.imgur.com/CgZaKnH.jpg", "Joey", "How you doing?"));
         return list;
+
     }
 
     private String tokenize(String name){

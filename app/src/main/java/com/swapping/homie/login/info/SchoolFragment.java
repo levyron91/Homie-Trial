@@ -53,7 +53,7 @@ public class SchoolFragment extends Fragment {
             public void onClick(View v) {
                 final String school = edSchool.getText().toString().trim();
                 if(school.isEmpty()){
-                    edSchool.setError("Please enter your school");
+                    edSchool.setError("Please enter your Location");
                     return;
                 }
 

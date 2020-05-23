@@ -1,6 +1,7 @@
 package com.swapping.homie.profile;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -46,6 +47,8 @@ public class ProfileFragment extends Fragment {
     private TextView tvSchool;
 
     private DatabaseReference mDatabase;
+    private SharedPreferences sp;
+    private SharedPreferences.Editor editor;
     private FirebaseAuth mAuth;
     private static String uID;
     Timer timer;
@@ -56,7 +59,8 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View v =inflater.inflate(R.layout.fragment_profile, container, false);
-
+        sp = this.getActivity().getSharedPreferences("Image", getActivity().MODE_PRIVATE);
+        editor = sp.edit();
         circleIndi = v.findViewById(R.id.circleIndi);
         adsViewPager = v.findViewById(R.id.adsViewPager);
         btnSetting = v.findViewById(R.id.btnSetting);
@@ -136,6 +140,8 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), UploadActivity.class);
+                editor.putInt("position", 1);
+                editor.commit();
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
             }

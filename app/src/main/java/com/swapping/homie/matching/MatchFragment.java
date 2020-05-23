@@ -158,10 +158,10 @@ public class MatchFragment extends Fragment implements CardStackListener {
                     if(!uid.equals(uID) && !isContain(connections, uid)){
                         boolean on_tinder = (boolean) dataSnapshot.child("settings").child(uID).child("on_tinder").getValue();
 
-                        //todo: Nếu đối tượng bật on_tinder
+                        //todo: If object is enabled on_tinder
                         if(on_tinder){
                             String gender = snapshot2.child("gender").getValue().toString();
-                            //todo:Nếu đối tượng có giới tính giống như người dùng cần
+                            //todo:If the object has the same gender as the user needs
                            // if(show_me.equals(gender)){
                                 long age = ageFormat((String) snapshot2.child("birthday").getValue());
                                 String name = (String) snapshot2.child("name").getValue();

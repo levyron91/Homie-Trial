@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -111,7 +112,7 @@ public class UploadActivity extends AppCompatActivity {
 
     private void uploadFile(){
         if(filePath!=null) {
-
+            Log.d("upl", "uploadFile: "+filePath.toString());
             final String uID = mAuth.getCurrentUser().getUid();
             final SweetAlertDialog pDialog = new SweetAlertDialog(UploadActivity.this, SweetAlertDialog.PROGRESS_TYPE);
             pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
